@@ -18,6 +18,11 @@ Go here and follow instructions:
 Go here and follow instructions: 
 - http://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
+- Create GitHub and BitBucket Accounts 
+- Install Sublime 2
+- Install Gitflow
+- Install SourceTree
+
 ##Definitions
 
 ###WordPress Developers work on:
@@ -580,8 +585,19 @@ Fix the hack using Sublime.
 
 ###Check your website
 
-Save Password somehow
 
+##TODO
+- Save Password somehow
+- Create GitHub and BitBucket Accounts
+	- Clone and set up keys
+- GitFlow
+- SourceTree
+- WordPress Workflow
+	- WordPress Core
+	- Content Directory
+		- Site Theme
+		- Site Plugin
+		- Other Plugins
 
 
 
