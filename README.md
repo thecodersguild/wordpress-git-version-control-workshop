@@ -413,12 +413,7 @@ Fix the hack using Sublime.
 
 ###Check your website
 
-
-
-
-
-
-
+## End of Part 1
 
 
 
