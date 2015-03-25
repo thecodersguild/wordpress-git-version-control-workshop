@@ -1,90 +1,8 @@
 #Version Control Workshop using Git for WordPress Development
 
-##Prerequisites 
+##Exercise: Repository/Init/Cloning 
 
-###Install Git
-####**Mac:** 
-
-- Go here http://git-scm.com/download/mac 
-- Follow instructions to install
-- Use Spotlight to open `terminal`
-- Type `git` to verify that Git is installed
-
-####**Windows:** 
-Go here and follow instructions: 
-- http://git-scm.com/download/win
-
-###**Linux:** 
-Go here and follow instructions: 
-- http://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-
-- Create GitHub and BitBucket Accounts 
-- Install Sublime 2
-- Install Gitflow
-- Install SourceTree
-
-##Definitions
-
-###WordPress Developers work on:
-- Themes, 
-- Plugins, 
-- and the Database.
-
-###Themes and Plugins are comprised of _"Source Code"_
-- HTML
-- CSS
-- PHP
-- Javascript
-- Maybe other(?)
-
-###Professional Workflow
-Professional workflow for development WordPress sites uses a series of servers for the process:
-- Develop source code on a local **_"Development"_** computer _(a best practice)_
-- Test code on **_"Testing"_** server _(to discover code bugs)_
-- Users use and enter content on a **_"Staging"_** server _(to discover usability issues)_
-- Deploy working source code to a **_"Live"_** a.k.a. **_"Production"_** server.
-
-###Why Development on a Local Computer a Best Practice?
-- We shall soon see.
-
-
-##What is _"Version Control?"_
-- **Version control** is a system _(e.g. Git)_ that records changes to a file or set of files over time so that you can recall specific versions later. 
-
-###Why is Version Control Important?
-####To restore earlier versions of source code for bugs fixes
-**Checkout specific earlier code:** _i.e. If an older version of the source code for a site is the live site and development on the next version is in progress, version control allows you to recover the source code that is running on the live server back to your development machine, fix a bug, redeploy to the live site, and then return back to working on the next version of the site._
-
-####To Allow _"What If?"_ Development
-**Branch the current code:** _"i.e. You want to implement an new feature but are not sure how to do it and do not want to fear breaking the working source code when you first try to implement."_
-
-####To Recover Lost Source Code
-**Clone the repository:** _i.e. you forget to backup the source code. Doh! With version control, the source code is never lost; you just recover from version control."_
-	
-####To Working Efficient in a Team
-**Merge different commits:** "_If more than one person is changing source code at a time -- i.e. a backend developer, a front-end themer and a Javascript developer -- then chances are great one person will overwrite code that another has written. Version control acts as the traffic cop for multiple developers._
-
-##Which Version Control to Use?  _Git_
-**Git** - [git-scm.com](http://git-scm.com)
-- Command line tool
-- Open-source, free to everyone
-- Works on Mac, Windows, Linux
-- Most widely used version control today.	
-
-##Initial Git Terminology
-
-###Repository:
-A **Repository** is a directory that contains all of the project files _(including documentation)_, and stores each file's revision history.
-
-###Initializing:
-To create a **New** repository on the local computer.
-
-###Cloning:
-**Cloning** is the process of copying a repository of source code from a remote computer to your local computer.
-
-##Basic Git Tutorial, Part 1
-
-####Create Workshop Directory
+###Create Workshop Directory
 We need to create a directory _(or folder)_ to contain our workshop files.
 
 On Mac or Linux _(in Terminal, **case is important**):_ 
@@ -100,7 +18,7 @@ On Windows _(in Cmd):_
     cd C:\Sites\git-workshop
     
 
-####Run Git to Verify it is Installed
+###Run Git to Verify it is Installed
 On Mac or Linux _(in Terminal, **case is important**):_ 
 
 	clear
@@ -112,37 +30,25 @@ On Windows _(in Cmd):_
 	git
     
 
-####Initialize a Repository
+###Initialize a Repository
 
 	git init
 
-####Configure Git to Know You
+###Configure Git to Know You
 Be sure to **replace** the placeholders with your own information:
 
     git config --global user.name 'Your Name Here'
     git config --global user.email 'your_email@here.com'
 
-##More Git Terminology
+##Exercise: Status/Commit/Add/Log
 
-###Status:
-The **Status** of the repository is the current state of all the files under development.
-
-###Adding:
-**Adding** a file or files to the list of files ready to be committed to the repository.
-
-###Commit:
-A **Commit** is a process that applies a set of files changes to the repository.
-
-
-##Basic Git Tutorial, Part 2
-
-####Check Status of your Repository
+###Check Status of your Repository
 
 	git status
 
 Notice you are on branch `master`.
 
-####Create a File
+###Create a File
 On Mac or Linux _(in Terminal, **case is important**):_ 
 
 	echo 'Hello' > hello.txt
@@ -155,17 +61,17 @@ On Windows _(in Cmd):_
 	dir
 	git status
     
-####Add the File to Files Ready to Commit
+###Add the File to Files Ready to Commit
 
 	git add hello.txt
 	git status
 	
-####Commit the File
+###Commit the File
 
 	git commit -m "My First Commit"
 	git status
 
-####Change the File
+###Change the File
 On Mac or Linux _(in Terminal, **case is important**):_ 
 
 	echo 'Hello World' > hello.txt
@@ -178,17 +84,17 @@ On Windows _(in Cmd):_
 	type hello.txt
 	git status
     
-####Add the File Again and Commit
+###Add the File Again and Commit
 
 	git add hello.txt
 	git commit -m "Add Hello to World"
 	git status
 
-####List Changes Storied in the Repository
+###List Changes Storied in the Repository
 
 	git log
 
-####Add Another File and Commit
+###Add Another File and Commit
 
 	echo 'More Info' > another.txt
 	git add another.txt
@@ -213,25 +119,10 @@ On Windows _(in Cmd):_
 		
 			 My First Commit
 
-##Even More Git Terminology
 
-###Checkout:
-**Checkout** is a process to pull earlier versions of source code out of the repository to create a new state of files in the directory.
+##Exercise: Checkout/Head/Branch
 
-###Head:
-The **Head** is a pointer to the most recent commit of your repository.
-
-###Detached Head:
-When you have a **Detached Head** the **Head** pointer points to the specific commit ID and not a named branch. 
-
-###Branch:
-A **Branch** is a named collection of the files changes that have been committed to that branch. 
-
-_If you commit to a detached head you may loose your changes later because no names point to your list of commits._
-
-##Basic Git Tutorial, Part 3
-
-####Checkout State of First Commit
+###Checkout State of First Commit
 Run the first command where <commit_id> is replaced with **your** specific commit ID from the `git log` command above.
 
 	git checkout <commit_id>
@@ -251,19 +142,19 @@ On Windows _(in Cmd):_
     
 The only file is `hello.txt`. We will call this state of files `first`.
 
-####Create a Branch named `first`
+###Create a Branch named `first`
 
 	git branch first
 	git status
 
-####Checkout Branch `first`
+###Checkout Branch `first`
 
 	git checkout first
 	git status
 	git branch
 	
 
-####Add a Line to `hello.txt` on Branch `first`
+###Add a Line to `hello.txt` on Branch `first`
 i.e. Consider this a bug fix.
 
 On Mac or Linux _(in Terminal, **case is important**):_ 
@@ -280,38 +171,26 @@ On Windows _(in Cmd):_
 	dir
 	git commit -m "Fixing Lack of Goodbye (Bug)"
 
-####Oops, we need to Add before we can Commit
+###Oops, we need to Add before we can Commit
 
 	git add hello.txt
 	git commit -m "Fixing Lack of Goodbye (Bug)"
 
 
+##Exercise: Merge/Conflict/Reset
 
-
-##Another Git Term
-
-###Merge:
-A **Merge** is to take one branch of code and merge its state into another branch of code.
-
-##Basic Git Tutorial, Part 3
-
-####Checkout `master`
+###Checkout `master`
 	git checkout master
 	ls
 	cat hello.txt
 	
-####Merge `first` into `master`
+###Merge `first` into `master`
 	git status
 	git merge first
 	ls
 	cat hello.txt
 
-##Yet Another Git Term
 
-###Merge Conflict:
-A **Merge Conflict** is what happens when the same files in the two branches being merged have had their same line of code changed. 
-
-##Basic Git Tutorial, Part 4
 ###Create and Checkout New Branch `second`
 i.e. Consider this a feature for a new version.
 	git checkout -b second
@@ -380,14 +259,6 @@ Use your text editor to fix the following conflict _(keep just the Hello/Goodbye
 	git status
 
 
-##Yet Another Git Term
-
-###Reset
-A **Reset** rolls back changes to a previous set of commits. NEVER reset when you have already `push`ed code to a remote server.
-
-
-##Basic Git Tutorial, Part 5
-
 ###Add New File `mistake.txt` 
 
 	echo 'This is a mistake.' > mistake.txt
@@ -402,15 +273,7 @@ A **Reset** rolls back changes to a previous set of commits. NEVER reset when yo
 
 
 
-##Another Set of Useful Git Terms
-
-###Stash
-You **Stash** uncommitted changes so Git will allow you to checkout an existing branch, otherwise your changes might conflict with the branch.
-
-###Remove
-You **Remove** changes from the list of files to commit so Git will not commit them on the next commit.
-
-##Basic Git Tutorial, Part 6
+##Exercise: Stash/Remove/Remote
 
 ###Add New File `new-file.txt` 
 
@@ -445,42 +308,7 @@ Imagine you did some changes, committed and are ready to return to master.
 	git stash list
 
 
-##Working in Teams with Remote Git Hosts
-
-###What is a _"Remote Repository?"_
-
-_**Remote Repositories** are versions of your project that are hosted on the Internet or on your network somewhere on a **"Git Server."**_ 
-
-###How to Host Your Git Repositories
-
-####Run your own Git Server 
-But who really wants to do that?
-
-####Use a Commercial Git Host
-The two (2) best known commercial Git hosts are:
-
-- **GitHub.com**
-	- Free for open-source repositories 
-	- Charges fee for private/controlled access repos.
-	- Generally Charges per repo
-	- Most popular for open-source
-	
-- **Bitbucket.org**
-	- Free for open-source repositories 
-	- Free for private/controlled access repos.
-	- Four (4) or Five (5) users are free.
-	- Charges fee for number of users. 
-	- Most popular for small teams
-
-Also, for WordPress Developers: 
-
-- The Pantheon Web Host
-	- Deploy via Git _(vs. FTP)_
-	- Free for development and testing
-	- Pay when you deploy to a live site
-
-
-###Create Pantheon Account
+##Exercise: Pantheon
 Create account at:
 - [pantheon.io](http://pantheon.io)
 - Remember your password! 
@@ -525,7 +353,7 @@ You **Push** uncommitted changes so a remote Git server to make your changes ava
 You **Pull** committed changes other developers have pushed to the Git server to synchronize their changes to your local repo.
 
 
-##Intermediate Git Tutorial, Part 1
+##Exercise: Push/Pull
 
 ###Go to Admin/Plugins/Installed Plugins
 
@@ -585,55 +413,7 @@ Fix the hack using Sublime.
 
 ###Check your website
 
-
-### Save Password
-When using HTTPS to push code or clone a private repository, it can be helpful to either cache or permanently store your credentials.
-
-#### Cache
-
-Run `git config --global credential.helper cache` once and git will cache your credentials for a set period of time.  
-
-You can configure how long credentials will be cached by running `git config --global credential.helper "cache --timeout=3600"`, where `--timeout` is the time in seconds.
-
-GitHub provides [additional directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) on how to further integrate with features of your operating system, but these are entirely optional.
-
-#### Permanently store
-
-Run `git config --global credential.helper store` once and git will request your username and password the first time and store it in a `.git-credentials` file in your home directory.  Once saved, git will automatically use the stored credentials in the future.
-
-To disable this functionality, just run `git config --global --unset credential.helper`.
-
-###Generating SSH Keys
-
-Follow the instructions here: https://help.github.com/articles/generating-ssh-keys/#platform-all
-
-### GitFlow
-[GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) is a branching model introduced by Vincent Driessen about 5 years ago.  Since, he has also created the [GitFlow collection of extensions](https://github.com/nvie/gitflow) that makes it even easier to utilize his branching model.
-
-A key concept of this branching model is that the `master` branch is always production ready.  Any development that takes place occurs on the `develop` branch.  Commits to the `master` branch are tagged with a version based on [Semantic Versioning](http://semver.org/).
-
-### SourceTree
-[SourceTree](http://www.sourcetreeapp.com/) is a tool that provides a graphical user interface for git.
-
-##TODO
-- Create GitHub and BitBucket Accounts
-- WordPress Workflow
-	- WordPress Core
-	- Content Directory
-		- Site Theme
-		- Site Plugin
-		- Other Plugins
-
-
-
-
-
-
-
-
-
-
-
+## End of Part 1
 
 
 
