@@ -607,10 +607,16 @@ To disable this functionality, just run `git config --global --unset credential.
 
 Follow the instructions here: https://help.github.com/articles/generating-ssh-keys/#platform-all
 
+### GitFlow (a branching model)
+[GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) is a branching model introduced by Vincent Driessen about 5 years ago.  Since, he has also created the [GitFlow collection of extensions](https://github.com/nvie/gitflow) that makes it even easier to utilize his branching model.
+
+A key concept of this branching model is that the `master` branch is always production ready.  Any development that takes place occurs on the `develop` branch.  Commits to the `master` branch are tagged with a version based on [Semantic Versioning](http://semver.org/).
+
+### SourceTree
+[SourceTree](http://www.sourcetreeapp.com/) is a tool that provides a graphical user interface for git.
+
 ##TODO
 - Create GitHub and BitBucket Accounts
-- GitFlow
-- SourceTree
 - WordPress Workflow
 	- WordPress Core
 	- Content Directory
