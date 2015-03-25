@@ -586,8 +586,24 @@ Fix the hack using Sublime.
 ###Check your website
 
 
+### Save Password
+When using HTTPS to push code or clone a private repository, it can be helpful to either cache or permanently store your credentials.
+
+## Cache
+
+Run `git config --global credential.helper cache` once and git will cache your credentials for a set period of time.  
+
+You can configure how long credentials will be cached by running `git config --global credential.helper "cache --timeout=3600"`, where `--timeout` is the time in seconds.
+
+GitHub provides [additional directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) on how to further integrate with features of your operating system, but these are entirely optional.
+
+## Permanently store
+
+Run `git config --global credential.helper store` once and git will request your username and password the first time and store it in a `.git-credentials` file in your home directory.  Once saved, git will automatically use the stored credentials in the future.
+
+To disable this functionality, just run `git config --global --unset credential.helper`.
+
 ##TODO
-- Save Password somehow
 - Create GitHub and BitBucket Accounts
 	- Clone and set up keys
 - GitFlow
