@@ -193,6 +193,7 @@ On Windows _(in Cmd):_
 
 ###Create and Checkout New Branch `second`
 i.e. Consider this a feature for a new version.
+
 	git checkout -b second
 
 Use your text editor to search and replace _"World"_ to _"People"_ in `hello.txt` _(you may need to reload the file.)_.  Now:
